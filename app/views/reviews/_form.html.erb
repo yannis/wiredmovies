@@ -1,0 +1,34 @@
+<%= form_with(model: [review], url: [movie, review]) do |form| %>
+  <% if review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+        <% review.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="block mt-2">
+    <%= form.label :title, class: "block" %>
+    <%= form.text_field :title, class: "block w-full" %>
+  </div>
+
+  <div class="block mt-2">
+    <%= form.label :body, class: "block" %>
+    <%= form.text_area :body, class: "block w-full" %>
+  </div>
+
+  <div class="block mt-2">
+    <%= form.label :author, "Name", class: "block" %>
+    <%= form.text_field :author, class: "block w-full" %>
+  </div>
+
+  <div class="block mt-2">
+    <%= form.submit class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+    or
+    <%= link_to 'cancel', :back %>
+  </div>
+<% end %>

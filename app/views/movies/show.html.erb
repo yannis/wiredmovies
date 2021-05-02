@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'All movies', movies_path %>
+<div class="grid grid-cols-6 gap-4">
+  <h1 class="col-span-5 text-3xl font-bold text-gray-900">
+    <%= @movie.name %>
+  </h1>
+  <small class="text-right">
+    <%= link_to 'Edit', edit_movie_path(@movie) %>
+  </small>
+</div>
+
+<p>
+  <%= @movie.director %> - <%= @movie.released_on.to_s(:long) %>
+</p>
+<div class="grid grid-cols-2 gap-4 pt-4">
+  <%= image_tag @movie.image_url %>
+
+  <p>
+    <%= @movie.description %>
+  </p>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-10">
+  <h2 class="text-2xl font-bold text-gray-900">
+    Reviews
+  </h2>
+  <small class="text-right">
+    <%= link_to 'New', new_movie_review_path(@movie) %>
+  </small>
+</div>
+<%= render @movie.reviews %>
