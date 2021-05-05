@@ -1,13 +1,7 @@
-<p id="notice"><%= notice %></p>
+<% @title = title(@movie.name) %>
 
-<%= link_to 'All movies', movies_path %>
-<div class="grid grid-cols-6 gap-4">
-  <h1 class="col-span-5 text-3xl font-bold text-gray-900">
-    <%= @movie.name %>
-  </h1>
-  <small class="text-right">
-    <%= link_to 'Edit', edit_movie_path(@movie) %>
-  </small>
+<div class="text-right">
+  <%= link_to 'Edit', edit_movie_path(@movie) %>
 </div>
 
 <p>
