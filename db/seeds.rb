@@ -1,7 +1,17 @@
 Review.destroy_all
 Movie.destroy_all
+User.destroy_all
 Review.connection.execute("ALTER SEQUENCE reviews_id_seq RESTART WITH 1")
 Movie.connection.execute("ALTER SEQUENCE movies_id_seq RESTART WITH 1")
+User.connection.execute("ALTER SEQUENCE users_id_seq RESTART WITH 1")
+
+users_data = [
+  {
+    name: "John Doe",
+    email: "john.doe@test.com",
+    password: "password"
+  }
+]
 
 file = File.read(Rails.root.join("db", "seed_movies.json"))
 movies_data = JSON.parse(file)
@@ -18,5 +28,8 @@ ActiveRecord::Base.transaction do
         Review.new(review_data)
       end
     )
+  end
+  users_data.each do |user_data|
+    User.create!(user_data)
   end
 end

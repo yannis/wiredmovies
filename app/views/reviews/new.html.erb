@@ -1,3 +1,3 @@
-<h1>New Review for “<%= @movie.name %>”</h1>
+<% title("New Review for “#{@movie.name}”") %>
 
 <%= render 'form', review: @review, movie: @movie %>
