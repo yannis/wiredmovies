@@ -1,6 +1,6 @@
 <%= form_with(model: [review], url: [movie, review]) do |form| %>
   <% if review.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="bg-red-200 border-2 border-red-500 p-2">
       <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
 
       <ul>
@@ -21,14 +21,9 @@
     <%= form.text_area :body, class: "block w-full" %>
   </div>
 
-  <div class="block mt-2">
-    <%= form.label :author, "Name", class: "block" %>
-    <%= form.text_field :author, class: "block w-full" %>
-  </div>
-
   <div class="block mt-4">
     <%= form.submit class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
     or
-    <%= link_to 'cancel', :back %>
+    <%= link_to 'cancel', form.object.movie, data: { action: "click->reviews#toggle" } %>
   </div>
 <% end %>

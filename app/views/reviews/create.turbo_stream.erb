@@ -1,0 +1,2 @@
+<%# turbo_stream.prepend dom_id(@movie, :reviews), @review %>
+<%= turbo_stream.replace "flash_messages", partial: "layouts/flash", locals: { notice: "Review was successfully created." } %>

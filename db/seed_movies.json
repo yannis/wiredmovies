@@ -9,8 +9,7 @@
         "reviews": [
             {
                 "title": "Hated it",
-                "body": "This movie is dumb!",
-                "author": "John Pete"
+                "body": "This movie is dumb!"
             }
         ]
     },
@@ -24,8 +23,7 @@
         "reviews": [
             {
                 "title": "Tarantino does it again!",
-                "body": "If this movie got stuck in our laserdisk player, I wouldn't mind!",
-                "author": "Rex Guy"
+                "body": "If this movie got stuck in our laserdisk player, I wouldn't mind!"
             }
         ]
     },
@@ -39,8 +37,7 @@
         "reviews": [
             {
                 "title": "About sums up feelings about Trump",
-                "body": "I like the ideals of this movie",
-                "author": "Barbara Sand"
+                "body": "I like the ideals of this movie"
             }
         ]
     },
@@ -54,8 +51,7 @@
         "reviews": [
             {
                 "title": "Man...",
-                "body": "New York back then looks awesome!",
-                "author": "Jason Shiblony"
+                "body": "New York back then looks awesome!"
             }
         ]
     },
@@ -69,8 +65,7 @@
         "reviews": [
             {
                 "title": "Spooky",
-                "body": "I couldn't keep my eyes open!",
-                "author": "Bob Hope"
+                "body": "I couldn't keep my eyes open!"
             }
         ]
     },
@@ -84,8 +79,7 @@
         "reviews": [
             {
                 "title": "Theres no light in sight",
-                "body": "After watching this film and clenching my eyes, I can no longer open them",
-                "author": "Eyesless Guy"
+                "body": "After watching this film and clenching my eyes, I can no longer open them"
             }
         ]
     },
@@ -99,8 +93,7 @@
         "reviews": [
             {
                 "title": "Almost gave me a heartattack",
-                "body": "My apple watch told me my heart rate was sitting at 165 while watching this film.",
-                "author": "Tim Sham"
+                "body": "My apple watch told me my heart rate was sitting at 165 while watching this film."
             }
         ]
     },
@@ -114,8 +107,7 @@
         "reviews": [
             {
                 "title": "Never again",
-                "body": "During this film I spilled ale all over my couch.",
-                "author": "John Smith"
+                "body": "During this film I spilled ale all over my couch."
             }
         ]
     },
@@ -129,8 +121,7 @@
         "reviews": [
             {
                 "title": "What is real",
-                "body": "I cant't seem to differentiate what is real anymore..",
-                "author": "Tim Burton"
+                "body": "I cant't seem to differentiate what is real anymore.."
             }
         ]
     }

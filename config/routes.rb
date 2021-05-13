@@ -3,9 +3,9 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :movies do
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: %i[index new create]
   end
-  resources :reviews, only: [:edit, :update, :destroy]
+  resources :reviews, only: %i[show edit update destroy]
 
   root "movies#index"
 end

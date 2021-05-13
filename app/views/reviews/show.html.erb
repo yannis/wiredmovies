@@ -1,4 +1,2 @@
-<p id="notice"><%= notice %></p>
+<% @title = title("Showing Review for movie “#{@review.movie.name}”") %>
 <%= render @review %>
-<%= link_to 'Edit', edit_review_path(@review) %> |
-<%= link_to 'Back', reviews_path %>

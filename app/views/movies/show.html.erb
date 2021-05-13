@@ -1,25 +1,43 @@
 <% @title = title(@movie.name) %>
-<div class="text-right">
-  <%= link_to 'Edit', edit_movie_path(@movie) %>
-</div>
 
-<p>
-  <%= @movie.director %> - <%= @movie.released_on.to_s(:long) %>
-</p>
-<div class="grid grid-cols-2 gap-4 pt-4">
-  <%= image_tag @movie.image_url %>
-
+<div class="grid grid-cols-2 gap-4">
   <p>
     <%= @movie.director %> - <%= @movie.released_on.to_s(:long) %>
   </p>
+  <% if can?(:update, @movie) %>
+    <small class="text-right">
+      <%= link_to 'Edit', edit_movie_path(@movie), class: "bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" %>
+    </small>
+  <% end %>
+</div>
+<div class="grid grid-cols-3 gap-4 pt-4">
+  <div>
+    <%= image_tag @movie.image_url %>
+  </div>
+
+  <p class="col-span-2">
+    <%= @movie.description %>
+  </p>
 </div>
 
-<div class="grid grid-cols-2 gap-4 mt-10">
-  <h2 class="text-2xl font-bold text-gray-900">
-    Reviews
-  </h2>
-  <small class="text-right">
-    <%= link_to 'New', new_movie_review_path(@movie) %>
-  </small>
+<div data-controller="reviews">
+  <div class="grid grid-cols-2 gap-4 mt-10">
+    <h2 class="text-2xl font-bold text-gray-900">
+      Reviews
+    </h2>
+
+    <small class="text-right" data-reviews-target="link">
+      <% if can?(:create, @review) %>
+        <%= link_to 'New', "#", data: { action: "click->reviews#toggle" }, class: "bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" %>
+      <% elsif !user_signed_in? %>
+        <%= link_to 'Sign in to post a review', new_user_session_path, class: "bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" %>
+      <% end %>
+    </small>
+  </div>
+  <% if can?(:create, @review) %>
+    <div class="hidden" data-reviews-target="form">
+      <%= render 'reviews/form', review: @review, movie: @movie %>
+    </div>
+  <% end %>
 </div>
-<%= render @movie.reviews %>
+<%= render @movie.reviews.order(id: :desc) %>

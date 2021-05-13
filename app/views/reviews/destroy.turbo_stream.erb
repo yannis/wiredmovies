@@ -1,0 +1,2 @@
+<%# turbo_stream.remove dom_id(@review) %>
+<%= turbo_stream.replace "flash_messages", partial: "layouts/flash", locals: { notice: "Review was successfully destroyed." } %>

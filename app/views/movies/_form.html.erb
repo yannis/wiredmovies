@@ -39,6 +39,6 @@
   <div class="block mt-4">
     <%= form.submit class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
     or
-    <%= link_to 'cancel', :back %>
+    <%= link_to 'cancel', form.object.persisted? ? form.object : root_path %>
   </div>
 <% end %>
