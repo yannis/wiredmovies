@@ -1,5 +1,10 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe Review, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:review) { build :review }
+
+  it { expect(review).to belong_to(:user).inverse_of(:reviews) }
+  it { expect(review).to belong_to(:movie).inverse_of(:reviews) }
 end

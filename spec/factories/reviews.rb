@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :review do
-    movie { nil }
+    user
+    movie
     title { "MyText" }
     body { "MyText" }
-    author { "MyText" }
   end
 end

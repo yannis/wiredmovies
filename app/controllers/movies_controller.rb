@@ -1,26 +1,20 @@
-class MoviesController < ApplicationController
-  before_action :authenticate_user!, except: %i[show index]
-  before_action :set_movie, only: %i[show edit update destroy]
+# frozen_string_literal: true
 
-  # GET /movies or /movies.json
+class MoviesController < ApplicationController
+  load_and_authorize_resource param_method: :movie_params
+
   def index
-    @movies = Movie.all
   end
 
-  # GET /movies/1 or /movies/1.json
   def show
   end
 
-  # GET /movies/new
   def new
-    @movie = Movie.new
   end
 
-  # GET /movies/1/edit
   def edit
   end
 
-  # POST /movies or /movies.json
   def create
     @movie = Movie.new(movie_params)
 
@@ -35,7 +29,6 @@ class MoviesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /movies/1 or /movies/1.json
   def update
     respond_to do |format|
       if @movie.update(movie_params)
@@ -48,7 +41,6 @@ class MoviesController < ApplicationController
     end
   end
 
-  # DELETE /movies/1 or /movies/1.json
   def destroy
     @movie.destroy
     respond_to do |format|
@@ -57,15 +49,7 @@ class MoviesController < ApplicationController
     end
   end
 
-  private
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_movie
-    @movie = Movie.find(params[:id])
-  end
-
-  # Only allow a list of trusted parameters through.
-  def movie_params
+  private def movie_params
     params.require(:movie).permit(:name, :director, :released_on, :image_url, :description)
   end
 end

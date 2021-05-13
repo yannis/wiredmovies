@@ -3,6 +3,11 @@
     <p class="max-w-7xl mx-auto "><%= notice %></p>
   </div>
 <% end %>
+<% if info %>
+  <div class="alert py-6 px-4 bg-yellow-500 text-white">
+    <p class="max-w-7xl mx-auto rounded"><%= info %></p>
+  </div>
+<% end %>
 <% if alert %>
   <div class="alert py-6 px-4 bg-green-500 text-white">
     <p class="max-w-7xl mx-auto rounded"><%= alert %></p>

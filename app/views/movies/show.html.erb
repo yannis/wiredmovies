@@ -1,7 +1,9 @@
 <% @title = title(@movie.name) %>
-<div class="text-right">
-  <%= link_to 'Edit', edit_movie_path(@movie) %>
-</div>
+<% if can?(:update, @movie) %>
+  <div class="text-right">
+    <%= link_to 'Edit', edit_movie_path(@movie) %>
+  </div>
+<% end %>
 
 <p>
   <%= @movie.director %> - <%= @movie.released_on.to_s(:long) %>
@@ -10,7 +12,7 @@
   <%= image_tag @movie.image_url %>
 
   <p>
-    <%= @movie.director %> - <%= @movie.released_on.to_s(:long) %>
+    <%= @movie.description %>
   </p>
 </div>
 
@@ -22,4 +24,4 @@
     <%= link_to 'New', new_movie_review_path(@movie) %>
   </small>
 </div>
-<%= render @movie.reviews %>
+<%= render @movie.reviews.order(id: :desc) %>

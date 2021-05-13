@@ -67,6 +67,7 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
+    cancancan (3.2.1)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
     devise (4.8.0)
@@ -82,8 +83,7 @@ GEM
     factory_bot_rails (6.1.0)
       factory_bot (~> 6.1.0)
       railties (>= 5.0.0)
-    faker (2.17.0)
-      i18n (>= 1.6, < 2)
+    ffaker (2.18.0)
     ffi (1.15.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -152,7 +152,7 @@ GEM
       thor (~> 1.0)
     rainbow (3.0.0)
     rake (13.0.3)
-    rb-fsevent (0.10.4)
+    rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     redis (4.2.5)
@@ -266,9 +266,10 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
+  cancancan
   devise
   factory_bot_rails
-  faker
+  ffaker
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
