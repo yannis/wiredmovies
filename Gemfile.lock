@@ -275,10 +275,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   ffaker
-<<<<<<< HEAD
   hotwire-rails (~> 0.1.3)
-=======
->>>>>>> c53d5c4 (➕ Add Cancancan)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)

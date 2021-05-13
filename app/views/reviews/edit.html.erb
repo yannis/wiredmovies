@@ -1,3 +1,4 @@
 <% @title = title("Editing Review") %>
-
-<%= render 'form', review: @review, movie: nil %>
+<%= turbo_frame_tag(dom_id(@review)) do %>
+  <%= render 'form', review: @review, movie: nil %>
+<% end %>
