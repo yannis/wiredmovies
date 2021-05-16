@@ -24,4 +24,8 @@
     <%= link_to 'New', new_movie_review_path(@movie) %>
   </small>
 </div>
-<%= render @movie.reviews.order(id: :desc) %>
+<%= turbo_frame_tag(dom_id(@movie, :reviews), src: movie_reviews_path(@movie)) do %>
+  <p>
+    Loading...
+  </p>
+<% end %>

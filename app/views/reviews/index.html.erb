@@ -4,4 +4,6 @@
     <%= link_to '+ New Review', new_movie_review_path(@movie) %>
   </div>
 <% end %>
-<%= render @reviews.order(id: :desc) %>
+<%= turbo_frame_tag(dom_id(@movie, :reviews)) do %>
+  <%= render @reviews.order(id: :desc) %>
+<% end %>
